@@ -13,8 +13,8 @@ export default defineConfig({
       },
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
       manifest: {
-        name: "My Awesome App",
-        short_name: "MyApp",
+        name: "Toubib Lib Patient",
+        short_name: "ToubibLibPatient",
         description: "My Awesome App description",
         theme_color: "#ffffff",
         icons: [

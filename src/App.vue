@@ -1,14 +1,20 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import {RouterView, RouterLink} from 'vue-router'
 </script>
 
+
 <template>
-  <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+  <div>
+    <nav>
+      <RouterLink to="/"> Home </RouterLink> |
+      <RouterLink to="/register"> Register </RouterLink> |
+      <RouterLink to="/login"> Login </RouterLink> |
+    </nav>
+    <RouterView />
+  </div>
 </template>
 
+
 <style scoped>
+
 </style>
