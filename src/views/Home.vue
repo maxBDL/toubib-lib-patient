@@ -9,6 +9,9 @@ const count = ref(0)
 </script>
 
 <template>
+  <nav>
+      <RouterLink to="/"> Home </RouterLink> |
+    </nav>
   <h1>{{ msg }}</h1>
 
   <div class="card">
