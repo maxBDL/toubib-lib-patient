@@ -1,14 +1,15 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { doc, getDocs, collection, addDoc } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { auth, db } from "../firebase/index.js";
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 defineProps({
   msg: String
 })
 
 const appointments = ref(null);
 const isLoading = ref(true);
+// const auth = getAuth();
 
 onMounted(async () => {
   const result = await getDocs(collection(db, "appointments"));
@@ -22,15 +23,31 @@ onMounted(async () => {
       'lastname': doc.data().lastname,
       'doctor_id': doc.data().doctor_id,
       'description': doc.data().description,
+      'date': doc.data().date
     };
     apts.push(doctor);
   });
   isLoading.value = false;
   appointments.value = apts;
-})
+});
+
+
+
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     // User is signed in, see docs for a list of available properties
+//     // https://firebase.google.com/docs/reference/js/firebase.User
+//     const uid = user.uid;
+//     // ...
+//   } else {
+//     // User is signed out
+//     // ...
+//   }
+// });
 </script>
 
 <template>
+  {{ auth }}
   <nav>
     <RouterLink to="/"> Home </RouterLink> |
     <RouterLink to="/appointments"> Nouveau </RouterLink>
@@ -68,7 +85,20 @@ onMounted(async () => {
               </tr>
             </tbody>
             <tbody v-else class="flex items-center justify-center w-100">
-              <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              <div class="lds-default">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
             </tbody>
           </table>
         </div>

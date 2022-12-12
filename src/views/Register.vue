@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { ref } from "vue";
 import { auth, db } from "../firebase/index.js";
-import { RouterLink } from 'vue-router'
+import {RouterView, RouterLink, useRouter} from 'vue-router'
 
 const email = ref(null);
 const password = ref(null);
@@ -14,6 +14,8 @@ const firstname = ref(null);
 const hasError = ref(false);
 
 const user = ref(null);
+const route = useRouter();
+
 
 const onRegister = async () => {
   try {
@@ -30,7 +32,7 @@ const onRegister = async () => {
         firstname: firstname.value,
         lastname: lastname.value
       });
-
+      route.push('/');
       console.log(result);
     }
   } catch (e) {
