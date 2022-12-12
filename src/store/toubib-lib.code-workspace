@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../React/react-calc"
+		},
+		{
+			"path": "../../../../../didier-maxime-vue3"
+		}
+	],
+	"settings": {}
+}

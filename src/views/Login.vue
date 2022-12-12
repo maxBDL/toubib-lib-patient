@@ -18,6 +18,7 @@ const onLogin = async () => {
       password.value
     );
     if (r.user) {
+      console.log("connected");
       window.navigator.vibrate(200);
       route.push('/');
     }
