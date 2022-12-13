@@ -33,7 +33,6 @@ const onRegister = async () => {
         lastname: lastname.value
       });
       route.push('/');
-      console.log(result);
     }
   } catch (e) {
     window.navigator.vibrate(2000);
