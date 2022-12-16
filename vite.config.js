@@ -17,6 +17,9 @@ export default defineConfig({
         short_name: "ToubibLibPatient",
         description: "My Awesome App description",
         theme_color: "#ffffff",
+        display: "standalone",
+        background_color : "#ffff00",
+        "orientation": "portrait",
         icons: [
           {
             src: "pwa-192x192.png",
