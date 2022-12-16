@@ -141,6 +141,8 @@ onMounted(async () => {
       </div>
     </div>
   </div>
+  <span><button class="text-blue">Installer</button> notre application</span>
+  
 </template>
 
 <style scoped>

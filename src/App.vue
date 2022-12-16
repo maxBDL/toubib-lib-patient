@@ -12,5 +12,4 @@ import {RouterView, RouterLink} from 'vue-router'
 
 
 <style scoped>
-
 </style>
