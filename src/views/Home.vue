@@ -34,6 +34,18 @@ onMounted(async () => {
   appointments.value = apts;
 });
 
+const installPWA = () => {
+    if (window.navigator.standalone === false) {
+      // Show the install prompt
+      window.navigator.standalone = true;
+    }
+    
+    navigator.serviceWorker.ready.then(registration => {
+      // Show the install prompt
+      registration.prompt();
+    });
+  }
+
 
 // onAuthStateChanged(auth, (user) => {
 //   if (user) {
@@ -142,7 +154,7 @@ onMounted(async () => {
     </div>
   </div>
   <span><button class="text-blue">Installer</button> notre application</span>
-  
+  <button @click="installPWA()">Install PWA</button>
 </template>
 
 <style scoped>
